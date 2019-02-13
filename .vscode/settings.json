@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "/home/hadoop/ai/aivenv/bin/python3",
+    "python.linting.pylintEnabled": true
+}
