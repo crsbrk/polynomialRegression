@@ -208,77 +208,77 @@ df_save.to_sql('pool_users_predict', engine,  if_exists = 'replace', index= Fals
 
 
 df_save = pd.DataFrame({'datatime_predict':stampTimeItemAll2,'pool_id':all_pool_id2.tolist(),'sgw_users_predict':predictSgw2Values.tolist(),'pgw_users_predict':predictPgw2Values.tolist()})
-df_save.to_sql('pool_users_predict', engine,  if_exists = 'replace', index= False)
+df_save.to_sql('pool_users_predict', engine,  if_exists = 'append', index= False)
 
 df_save = pd.DataFrame({'datatime_predict':stampTimeItemAll3,'pool_id':all_pool_id3.tolist(),'sgw_users_predict':predictSgw3Values.tolist(),'pgw_users_predict':predictPgw3Values.tolist()})
-df_save.to_sql('pool_users_predict', engine,  if_exists = 'replace', index= False)
+df_save.to_sql('pool_users_predict', engine,  if_exists = 'append', index= False)
 
 df_save = pd.DataFrame({'datatime_predict':stampTimeItemAll4,'pool_id':all_pool_id4.tolist(),'sgw_users_predict':predictSgw4Values.tolist(),'pgw_users_predict':predictPgw4Values.tolist()})
-df_save.to_sql('pool_users_predict', engine,  if_exists = 'replace', index= False)
+df_save.to_sql('pool_users_predict', engine,  if_exists = 'append', index= False)
 
 
-# Visualising the Polynomial Regression results
-# plt.figure()
-# plt.scatter(X1, sgwy1, color = 'green')
-# plt.plot(X1, lin_reg_sgw1.predict(poly_reg_sgw1.fit_transform(X1)), color = 'blue')
-# plt.plot(all_time1, lin_reg_sgw1.predict(poly_reg_sgw1.fit_transform(all_time1)), color = 'red')
-# plt.title('users GuangZhou pool(Polynomial Regression)')
-# plt.xlabel('Position level')
-# plt.ylabel('sgwusers')
+#Visualising the Polynomial Regression results
+#plt.figure()
+#plt.scatter(X1, sgwy1, color = 'green')
+#plt.plot(X1, lin_reg_sgw1.predict(poly_reg_sgw1.fit_transform(X1)), color = 'blue')
+#plt.plot(all_time1, lin_reg_sgw1.predict(poly_reg_sgw1.fit_transform(all_time1)), color = 'red')
+#plt.title('users GuangZhou pool(Polynomial Regression)')
+#plt.xlabel('Position level')
+#plt.ylabel('sgwusers')
 
 
-# plt.scatter(X1, pgwy1, color = 'greenyellow')
-# plt.plot(X1, lin_reg_pgw1.predict(poly_reg_pgw1.fit_transform(X1)), color = 'blue')
-# plt.plot(t, lin_reg_pgw1.predict(poly_reg_pgw1.fit_transform(t)), color = 'red')
+#plt.scatter(X1, pgwy1, color = 'greenyellow')
+#plt.plot(X1, lin_reg_pgw1.predict(poly_reg_pgw1.fit_transform(X1)), color = 'blue')
+#plt.plot(t, lin_reg_pgw1.predict(poly_reg_pgw1.fit_transform(t)), color = 'red')
 
-# plt.show()
-
-
-# plt.figure()
-# plt.scatter(X2, sgwy2, color = 'green')
-# plt.plot(X2, lin_reg_sgw2.predict(poly_reg_sgw2.fit_transform(X1)), color = 'blue')
-# plt.plot(t, lin_reg_sgw2.predict(poly_reg_sgw2.fit_transform(t)), color = 'red')
-# plt.title('users YueXi pool(Polynomial Regression)')
-# plt.xlabel('Position level')
-# plt.ylabel('sgwusers')
+#plt.show()
 
 
-# plt.scatter(X1, pgwy2, color = 'greenyellow')
-# plt.plot(X1, lin_reg_pgw2.predict(poly_reg_pgw2.fit_transform(X1)), color = 'blue')
-# plt.plot(t, lin_reg_pgw2.predict(poly_reg_pgw2.fit_transform(t)), color = 'red')
-
-# plt.show()
-
-
-
-# plt.figure()
-# plt.scatter(X4, sgwy4, color = 'green')
-# plt.plot(X4, lin_reg_sgw4.predict(poly_reg_sgw4.fit_transform(X4)), color = 'blue')
-# plt.plot(t, lin_reg_sgw4.predict(poly_reg_sgw4.fit_transform(t)), color = 'red')
-# plt.title('users DongGuan pool(Polynomial Regression)')
-# plt.xlabel('Position level')
-# plt.ylabel('sgwusers')
+#plt.figure()
+#plt.scatter(X2, sgwy2, color = 'green')
+#plt.plot(X2, lin_reg_sgw2.predict(poly_reg_sgw2.fit_transform(X1)), color = 'blue')
+#plt.plot(t, lin_reg_sgw2.predict(poly_reg_sgw2.fit_transform(t)), color = 'red')
+#plt.title('users YueXi pool(Polynomial Regression)')
+#plt.xlabel('Position level')
+#plt.ylabel('sgwusers')
 
 
-# plt.scatter(X4, pgwy4, color = 'greenyellow')
-# plt.plot(X4, lin_reg_pgw4.predict(poly_reg_pgw4.fit_transform(X4)), color = 'blue')
-# plt.plot(t, lin_reg_pgw4.predict(poly_reg_pgw4.fit_transform(t)), color = 'red')
+#plt.scatter(X1, pgwy2, color = 'greenyellow')
+#plt.plot(X1, lin_reg_pgw2.predict(poly_reg_pgw2.fit_transform(X1)), color = 'blue')
+#plt.plot(t, lin_reg_pgw2.predict(poly_reg_pgw2.fit_transform(t)), color = 'red')
 
-# plt.show()
-
-
-# plt.figure()
-# plt.scatter(X3, sgwy3, color = 'green')
-# plt.plot(X3, lin_reg_sgw3.predict(poly_reg_sgw3.fit_transform(X3)), color = 'blue')
-# plt.plot(t, lin_reg_sgw3.predict(poly_reg_sgw3.fit_transform(t)), color = 'red')
-# plt.title('users ShenZhen pool(Polynomial Regression)')
-# plt.xlabel('Position level')
-# plt.ylabel('sgwusers')
+#plt.show()
 
 
-# plt.scatter(X3, pgwy3, color = 'greenyellow')
-# plt.plot(X3, lin_reg_pgw3.predict(poly_reg_pgw3.fit_transform(X3)), color = 'blue')
-# plt.plot(t, lin_reg_pgw3.predict(poly_reg_pgw3.fit_transform(t)), color = 'red')
 
-# plt.show()
+#plt.figure()
+#plt.scatter(X4, sgwy4, color = 'green')
+#plt.plot(X4, lin_reg_sgw4.predict(poly_reg_sgw4.fit_transform(X4)), color = 'blue')
+#plt.plot(t, lin_reg_sgw4.predict(poly_reg_sgw4.fit_transform(t)), color = 'red')
+#plt.title('users DongGuan pool(Polynomial Regression)')
+#plt.xlabel('Position level')
+#plt.ylabel('sgwusers')
+
+
+#plt.scatter(X4, pgwy4, color = 'greenyellow')
+#plt.plot(X4, lin_reg_pgw4.predict(poly_reg_pgw4.fit_transform(X4)), color = 'blue')
+#plt.plot(t, lin_reg_pgw4.predict(poly_reg_pgw4.fit_transform(t)), color = 'red')
+
+#plt.show()
+
+
+#plt.figure()
+#plt.scatter(X3, sgwy3, color = 'green')
+#plt.plot(X3, lin_reg_sgw3.predict(poly_reg_sgw3.fit_transform(X3)), color = 'blue')
+#plt.plot(t, lin_reg_sgw3.predict(poly_reg_sgw3.fit_transform(t)), color = 'red')
+#plt.title('users ShenZhen pool(Polynomial Regression)')
+#plt.xlabel('Position level')
+#plt.ylabel('sgwusers')
+
+
+#plt.scatter(X3, pgwy3, color = 'greenyellow')
+#plt.plot(X3, lin_reg_pgw3.predict(poly_reg_pgw3.fit_transform(X3)), color = 'blue')
+#plt.plot(t, lin_reg_pgw3.predict(poly_reg_pgw3.fit_transform(t)), color = 'red')
+
+#plt.show()
 
